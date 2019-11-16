@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="Elves&#39; Blog">
 <meta property="og:description" content="今天我们来学习Hexo基于Mac OS的安装和使用,废话不多说，我们开始吧。 创建github.io网站 点击New repository 输入Repository name，必需为username.github.io格式。username替换为用户名 点击按钮Create repository 进入仓库username.github.io,点击setting,找到GitHub Pages模块 点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-24T14:24:05.230Z">
+<meta property="og:image" content="http://yoursite.com/Users/Temp/Documents/Hexo/themes/next/source/images/nextThemeImage.png">
+<meta property="og:updated_time" content="2019-03-25T10:22:05.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo部署github博客">
 <meta name="twitter:description" content="今天我们来学习Hexo基于Mac OS的安装和使用,废话不多说，我们开始吧。 创建github.io网站 点击New repository 输入Repository name，必需为username.github.io格式。username替换为用户名 点击按钮Create repository 进入仓库username.github.io,点击setting,找到GitHub Pages模块 点">
+<meta name="twitter:image" content="http://yoursite.com/Users/Temp/Documents/Hexo/themes/next/source/images/nextThemeImage.png">
 
 
 
@@ -318,6 +320,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/11/Hexo部署github博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/11/Hexo部署github博客/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -392,7 +404,34 @@
 <li>找到_config.yml，拉到最下面，修改为如下内容：<br>deploy:<br>type: git<br>repository: <a href="https://github.com/username/username.github.io.git" target="_blank" rel="noopener">https://github.com/username/username.github.io.git</a><br>branch: master</li>
 <li>每次修改本地文件，都需要命令$ hexo generate才能保存。而且每次使用命令都必须在Hexo根目录下使用。</li>
 </ol>
+<h2 id="安装-Next主题"><a href="#安装-Next主题" class="headerlink" title="安装 Next主题"></a>安装 Next主题</h2><p>如果不喜欢hexo 默认的主题，我们也可以自行安装其他的主题，安装方式很简单，</p>
+<ol>
+<li><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">首先cd到你的hexo目录</span><br><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启用<br>打开站点的配置文件_config.yml，找到 theme 字段，并将其值更改为 next</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证<br>在终端执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后使用浏览器访问：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p>如果你看到的站点外观是这样的，说明nexts主题已经安装成功，这是next默认的样式Muse<br><img src="/Users/Temp/Documents/Hexo/themes/next/source/images/nextThemeImage.png" alt="next默认样式"></p>
+<ol start="4">
+<li>配置tags 和categories<br>生成tags 和categories页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>将hexo/source/tags和hexo/source/categories中的index.md的改为如下内容,date可以使用默认生成的，title可自定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2019-03-24 21:53:22</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2015-10-20 06:49:50</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>标识tags和categories<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 这是title</span><br><span class="line">tags: </span><br><span class="line">  - tag1</span><br><span class="line">categories: 分类1</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>重启 hexo s，就能看到设置好的tag和categories了</p>
 <h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>现在Hexo支持更加简单的命令格式了，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo s == hexo server</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo d == hexo deploy</span><br><span class="line">hexo n == hexo new</span><br></pre></td></tr></table></figure></p>
+<h2 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h2><p>如果想给自己的blog添加评论功能，可以参考这个文章<a href="https://blog.csdn.net/blue_zy/article/details/79071414" target="_blank" rel="noopener">为你的Hexo加上评论系统-Valine</a></p>
 
       
     </div>
@@ -433,6 +472,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/03/30/Git的使用/" rel="prev" title="Git的使用">
+                Git的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -460,6 +503,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -508,7 +554,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -519,7 +565,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -530,7 +576,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -563,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建github-io网站"><span class="nav-number">1.</span> <span class="nav-text">创建github.io网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基础"><span class="nav-number">2.</span> <span class="nav-text">安装基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">3.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js"><span class="nav-number">4.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">5.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地博文服务"><span class="nav-number">6.</span> <span class="nav-text">创建本地博文服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo关联github"><span class="nav-number">7.</span> <span class="nav-text">Hexo关联github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提示"><span class="nav-number">8.</span> <span class="nav-text">提示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建github-io网站"><span class="nav-number">1.</span> <span class="nav-text">创建github.io网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基础"><span class="nav-number">2.</span> <span class="nav-text">安装基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">3.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js"><span class="nav-number">4.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">5.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地博文服务"><span class="nav-number">6.</span> <span class="nav-text">创建本地博文服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo关联github"><span class="nav-number">7.</span> <span class="nav-text">Hexo关联github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Next主题"><span class="nav-number">8.</span> <span class="nav-text">安装 Next主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提示"><span class="nav-number">9.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论功能"><span class="nav-number">10.</span> <span class="nav-text">评论功能</span></a></li></ol></div>
             
 
           </div>
@@ -751,6 +797,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '2WhhQ73mkbHIAMqStq7SNM1h-gzGzoHsz',
+        appKey: 'JjKeqhsEhTxhYhx15sK3Im5J',
+        placeholder: 'ヾﾉ≧∀≦)o 吼吼。。。',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
